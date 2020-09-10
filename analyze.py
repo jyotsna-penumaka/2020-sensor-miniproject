@@ -35,12 +35,37 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
             co2[time] = {room: r[room]["co2"][0]}
 
     data = {
-        "temperature": pandas.DataFrame.from_dict(temperature, "index").sort_index(),
-        "occupancy": pandas.DataFrame.from_dict(occupancy, "index").sort_index(),
-        "co2": pandas.DataFrame.from_dict(co2, "index").sort_index(),
-    }
+            "temperature": pandas.DataFrame.from_dict(temperature, "index").sort_index(),
+            "occupancy": pandas.DataFrame.from_dict(occupancy, "index").sort_index(),
+            "co2": pandas.DataFrame.from_dict(co2, "index").sort_index(),
+            }
 
     return data
+
+def analyse_data(data: T.Dict[str, pandas.DataFrame]):
+    for k in data:
+        # data[k].plot()
+        #time = data[k].index
+        #data[k].hist()
+        #plt.figure()
+        #plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
+        #plt.xlabel("Time (seconds)")
+        if k != "co2" :
+            median = data[k].median()
+            var = data[k].var()
+            print(f'median observed from the {k} data: ')
+            print(median)
+            print(f'variance observed from the {k} data: ')
+            print(var)
+        data[k].plot.density(title=f'probability distribution function for {k}')
+    time = data["temperature"].index
+    time_delta = (time[1:]-time[:-1]).total_seconds().to_series().to_frame()
+    time_var = time_delta.var()
+    time_mean = time_delta.mean()
+    print(f'variance of the time interval of the sensor readings {time_var}')
+    print(f'mean of the time interval of the sensor readings {time_mean}')
+    time_delta.plot.density(title=f'probability distribution function for time')
+    plt.show()
 
 
 if __name__ == "__main__":
@@ -51,13 +76,4 @@ if __name__ == "__main__":
     file = Path(P.file).expanduser()
 
     data = load_data(file)
-
-    for k in data:
-        # data[k].plot()
-        time = data[k].index
-        data[k].hist()
-        plt.figure()
-        plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
-        plt.xlabel("Time (seconds)")
-
-    plt.show()
+    analyse_data(data)

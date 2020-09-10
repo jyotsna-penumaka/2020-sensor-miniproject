@@ -37,6 +37,7 @@ async def main(port: int, addr: str, max_packets: int, log_file: Path = None):
 
     if log_file:
         log_file = Path(log_file).expanduser()
+        file = log_file.open("a")
 
     uri = f"ws://{addr}:{port}"
 
@@ -52,8 +53,11 @@ async def main(port: int, addr: str, max_packets: int, log_file: Path = None):
             if i % 5 == 0:
                 pass
                 # print(f"{i} total messages received")
-            print(data)
-
+            #print(data)
+            file.write(data + "\n")
+        
+        file.flush()
+        file.close()
 
 def cli():
     p = argparse.ArgumentParser(description="WebSocket client")
