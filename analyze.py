@@ -44,20 +44,15 @@ def load_data(file: Path) -> T.Dict[str, pandas.DataFrame]:
 
 def analyse_data(data: T.Dict[str, pandas.DataFrame]):
     for k in data:
-        # data[k].plot()
-        #time = data[k].index
-        #data[k].hist()
-        #plt.figure()
-        #plt.hist(np.diff(time.values).astype(np.int64) // 1000000000)
-        #plt.xlabel("Time (seconds)")
-        if k != "co2" :
-            median = data[k].median()
-            var = data[k].var()
-            print(f'median observed from the {k} data: ')
-            print(median)
-            print(f'variance observed from the {k} data: ')
-            print(var)
-        data[k].plot.density(title=f'probability distribution function for {k}')
+        if k != "co2":
+            median = data[k]["lab1"].median()
+            var = data[k]["lab1"].var()
+            print(f'median observed from the lab1 {k} data: {"{:.2f}".format(median)}')
+            print(f'variance observed from the lab1 {k} data: {"{:.2f}".format(var)}')
+        (data[k]["lab1"]).plot.density(label=k,title=f'probability distribution function for lab1')
+    plt.xlabel('Sensors')
+    plt.ylabel('Probability')
+    plt.legend(loc="upper left")
     time = data["temperature"].index
     time_delta = (time[1:]-time[:-1]).total_seconds().to_series().to_frame()
     time_var = time_delta.var()
@@ -65,14 +60,15 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
     print(f'variance of the time interval of the sensor readings {time_var}')
     print(f'mean of the time interval of the sensor readings {time_mean}')
     time_delta.plot.density(title=f'probability distribution function for time')
+    plt.xlabel('Time Interval (seconds)')
+    plt.ylabel('Probability')
     plt.show()
-
+    
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description="load and analyse IoT JSON data")
     p.add_argument("file", help="path to JSON data file")
     P = p.parse_args()
-
     file = Path(P.file).expanduser()
 
     data = load_data(file)
