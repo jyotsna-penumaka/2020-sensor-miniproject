@@ -49,10 +49,11 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
             var = data[k]["lab1"].var()
             print(f'median observed from the lab1 {k} data: {"{:.2f}".format(median)}')
             print(f'variance observed from the lab1 {k} data: {"{:.2f}".format(var)}')
+        plt.figure()
         (data[k]["lab1"]).plot.density(label=k,title=f'probability distribution function for lab1')
-    plt.xlabel('Sensors')
-    plt.ylabel('Probability')
-    plt.legend(loc="upper left")
+        plt.xlabel(k)
+        plt.ylabel('Probability')
+        plt.legend(loc="upper left")
     time = data["temperature"].index
     time_delta = (time[1:]-time[:-1]).total_seconds().to_series().to_frame()
     time_var = time_delta.var()
@@ -63,7 +64,6 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
     plt.xlabel('Time Interval (seconds)')
     plt.ylabel('Probability')
     plt.show()
-    
 
 if __name__ == "__main__":
     p = argparse.ArgumentParser(description="load and analyse IoT JSON data")

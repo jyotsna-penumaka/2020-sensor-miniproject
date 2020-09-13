@@ -14,13 +14,14 @@ var = lab1_temp.var()
 mean = lab1_temp.mean()
 low = mean - (2*math.sqrt(var))
 high = mean + (2*math.sqrt(var))
+print(low)
+print(high)
+# lab1_bad_temp = lab1_temp[(low >= lab1_temp) | (lab1_temp >= high)]
+# bad_fraction = "{:.2f}".format((lab1_bad_temp.count()/lab1_temp.count())*100)
+# print(f'the percent of "bad" data points: {bad_fraction}%')
 
-lab1_bad_temp = lab1_temp[(low >= lab1_temp) | (lab1_temp >= high)]
-bad_fraction = "{:.2f}".format((lab1_bad_temp.count()/lab1_temp.count())*100)
-print(f'the percent of "bad" data points: {bad_fraction}%')
-
-lab1_good_temp = lab1_temp[(low <= lab1_temp) & (lab1_temp <= high)]
-var = "{:.2f}".format(lab1_good_temp.var())
-median = "{:.2f}".format(lab1_good_temp.median())
-print(f'median observed from the lab1 temperature data after discarding bad data points: {median}')
-print(f'variance observed from the lab1 temperature data after discarding bad data points: {var}')
+# lab1_good_temp = lab1_temp[(low <= lab1_temp) & (lab1_temp <= high)]
+# var = "{:.2f}".format(lab1_good_temp.var())
+# median = "{:.2f}".format(lab1_good_temp.median())
+# print(f'median observed from the lab1 temperature data after discarding bad data points: {median}')
+# print(f'variance observed from the lab1 temperature data after discarding bad data points: {var}')
