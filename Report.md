@@ -4,7 +4,7 @@
 
 
 ## Task 0
-##### 1) What is the greeting string issued by the server to the client upon first connecting?
+#### 1) What is the greeting string issued by the server to the client upon first connecting?
 The greeting string issued by the server to the client upon first connecting : ECE Senior Capstone IoT simulator                 
 
 ## Task 1
