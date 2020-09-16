@@ -1,6 +1,6 @@
 # 2020-sensor-miniproject Report
 
-### Contributors: Jyotsna Penumaka (BU ID: U13844479), Emmanuel Parez (BU ID: U)
+### Contributors: Jyotsna Penumaka (BU ID: U13844479), Emanuel Parez (BU ID: U74196797)
 
 
 ## Task 0
@@ -17,10 +17,12 @@ python3 -m sp_iotsim.client -l log.txt
 We added code to src/sp_iotsim/client.py to collect data in a text file, in this case log.txt. 
 
 ## Task 2
-#### 1) Report median and variance observed from temperature data
 ```sh
 python3 analyze.py log.txt
 ```
+We added code to analyze.py to complete this task. Most of the tasks were done using pandas built-in functions.
+#### 1) Report median and variance observed from temperature data
+
 ###### Temperature
 
 Room | Median | Variance
@@ -50,7 +52,7 @@ Mean | Variance
 
 <img width="632" alt="Screen Shot 2020-09-15 at 10 21 35 PM" src="https://user-images.githubusercontent.com/60219242/93285042-faef3f00-f7a1-11ea-8455-84a45c3f853c.png">
 
-Yes it mimics the erlang distribution which is used to predict waiting times in queuing systems.
+Yes, it mimics the Erlang distribution which is used to predict waiting times in queuing systems. Erlang distrubution is also specific case of a Gamma distrubtion. Since the time intervals for all three rooms are the same, we are using one probability distribution function graph to represent them.
 
 
 ## Task 3
@@ -59,23 +61,23 @@ Yes it mimics the erlang distribution which is used to predict waiting times in 
 ```sh
 python3 algorithm.py log.txt
 ```
-Fraction of Bad Readings in temperature sensor data for lab1: 
+Fraction of "Bad Readings" in temperature sensor data for Lab1: 
 Room | Percentage | Fraction
 -----|------------|----------
-lab1 | 1.11% | 6/540
+Lab1 | 1.11% | 6/540
 
-the temperature median and variance with these bad data points discarded:
+The temperature median and variance with these bad data points discarded:
 
 Room | Median | Variance
 -----|--------|----------
-lab1 | 21.01 | 0.31
+Lab1 | 21.01 | 0.31
 
 #### 2) Does a persistent change in temperature always indicate a failed sensor?
 Not necessarily. A minute change caused by opening doors or changing the AC does not indicate a failed sensor. However, a drastic change would indicate a failed sensor (big change → sensor fails). The rate of change needs to be consistent with reality for example it cannot go from 27 celsius to 41 or from 27 celsius to -26. 
 
 
 #### 3) What are possible bounds on temperature for each room type?
-Upper and Lower bounds were calculated using 68–95–99.7 rule, which would result in 95.45% of the values to lie within two standard deviations of the mean. This was used to filter the data in task 3.
+Upper and Lower bounds were calculated using 68–95–99.7 rule, which would result in 95.45% of the values to lie within two standard deviations of the mean. This was used to filter the data in task 3. This was completed in algorithm.py.
 
 Upper bounds : mean + (2 * standard deviation)
 
@@ -90,13 +92,14 @@ office | 15.24 | 30.73
 
 ## Task 4
 #### 1) How is this simulation reflective of the real world?
+As stated before, the simulation follows the Erlang distribution used in queueing systems and alike. The simulation also takes into account that sensors, at times, fail to correctly collect information from their surroundings.
 
 #### 2) How is this simulation deficient? What factors does it fail to account for?
-The simulation is deficient because it does not account for the time of the day and the change in temperature from opening or closing of the doors in the room.
+The simulation is deficient because it does not account for the time of the day and the change in temperature from opening or closing of the doors in the room. In other words, the simulation can have more realistic features to it.
 
 #### 3) How is the difficulty of initially using this Python websockets library as compared to a compiled language e.g. C++ websockets
-Python websockets library was convenient to use since the functions were well documented and easy to find. 
+Python websockets library was convenient to use since the functions were well documented and easy to find compared to C++ websockets. 
 
 
 #### 4) Would it be better to have the server poll the sensors, or the sensors reach out to the server when they have data?
-It is better for the server to poll the sensor. 
+It is better for the server to poll the sensor to keep complicated situations to occur especially as the number of sensors increase.
