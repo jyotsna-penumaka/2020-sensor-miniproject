@@ -17,6 +17,7 @@ low = mean - (2*math.sqrt(var))
 high = mean + (2*math.sqrt(var))
 
 lab1_bad_temp = lab1_temp[(low >= lab1_temp) | (lab1_temp >= high)]
+print(f'Fraction of bad data points: {lab1_bad_temp.count()}/{lab1_temp.count()}')
 bad_fraction = "{:.2f}".format((lab1_bad_temp.count()/lab1_temp.count())*100)
 print(f'the percent of "bad" data points: {bad_fraction}%')
 
