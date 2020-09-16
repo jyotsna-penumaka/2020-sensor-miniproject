@@ -1,6 +1,6 @@
 # 2020-sensor-miniproject Report
 
-### Contributors: Jyotsna Penumaka (BU ID: U13844479), Emanuel Parez (BU ID: U74196797)
+### Contributors: Jyotsna Penumaka (BU ID: U13844479), Emanuel Perez (BU ID: U74196797)
 
 
 ## Task 0
