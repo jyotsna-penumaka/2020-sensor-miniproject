@@ -38,7 +38,7 @@ Room | Median | Variance
 Lab1 | 5.00 | 5.05
 
 #### 3) Plots of Probability Distribution Functions for each Sensor
-<img width="632" alt="Screen Shot 2020-09-15 at 10 21 35 PM" src="https://user-images.githubusercontent.com/60219242/93285042-faef3f00-f7a1-11ea-8455-84a45c3f853c.png">
+<img width="639" alt="Screen Shot 2020-09-15 at 10 22 12 PM" src="https://user-images.githubusercontent.com/60219242/93285103-12c6c300-f7a2-11ea-932a-48a38cd12078.png">
 <img width="637" alt="Screen Shot 2020-09-15 at 10 21 46 PM" src="https://user-images.githubusercontent.com/60219242/93285069-0478a700-f7a2-11ea-8d30-7729ace067f7.png">
 <img width="638" alt="Screen Shot 2020-09-15 at 10 21 59 PM" src="https://user-images.githubusercontent.com/60219242/93285094-0c384b80-f7a2-11ea-8edb-5a88c5759aa6.png">
 
@@ -50,7 +50,7 @@ Mean | Variance
 -----|----------
 0.968014 | 1.013983
 
-<img width="639" alt="Screen Shot 2020-09-15 at 10 22 12 PM" src="https://user-images.githubusercontent.com/60219242/93285103-12c6c300-f7a2-11ea-932a-48a38cd12078.png">
+<img width="632" alt="Screen Shot 2020-09-15 at 10 21 35 PM" src="https://user-images.githubusercontent.com/60219242/93285042-faef3f00-f7a1-11ea-8455-84a45c3f853c.png">
 
 Yes it mimics the erlang distribution which is used to predict waiting times in queuing systems.
 
