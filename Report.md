@@ -52,6 +52,9 @@ Yes it mimics the erlang distribution which is used to predict waiting times in 
 ## Task 3
 #### 1) Implement an algorithm that detects anomalies in temperature sensor data. Print the percent of "bad" data points and determine the temperature median and variance with these bad data points discarded--the same room you did in Task 2 Question 1.
 
+```sh
+python3 algorithm.py log.txt
+```
 Fraction of Bad Readings in temperature sensor data for lab1: 
 Room | Percentage | Fraction
 -----|------------|----------
