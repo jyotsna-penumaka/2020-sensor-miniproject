@@ -5,9 +5,7 @@
 
 ## Task 0
 ##### 1) What is the greeting string issued by the server to the client upon first connecting?
-The greeting string issued by the server to the client upon first connecting : ECE Senior Capstone IoT simulator .
-On running sp_iotsim.server --> IoT server starting:  localhost port 8765 .
-On running sp_iotsim.client --> ECE Senior Capstone IoT simulator .
+The greeting string issued by the server to the client upon first connecting : ECE Senior Capstone IoT simulator                 
 
 ## Task 1
 #### 1) Add Python code to Websockets client that saves the JSON data to a text file as it comes in (message by message)
