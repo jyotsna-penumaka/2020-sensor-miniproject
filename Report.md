@@ -42,8 +42,13 @@ Lab1 | 5.00 | 5.05
 <img width="637" alt="Screen Shot 2020-09-15 at 10 21 46 PM" src="https://user-images.githubusercontent.com/60219242/93285069-0478a700-f7a2-11ea-8d30-7729ace067f7.png">
 <img width="638" alt="Screen Shot 2020-09-15 at 10 21 59 PM" src="https://user-images.githubusercontent.com/60219242/93285094-0c384b80-f7a2-11ea-8edb-5a88c5759aa6.png">
 
+#### 4) Histogram Plots for each Sensor
+<img width="638" alt="CO2 Histogram" src="https://user-images.githubusercontent.com/35668165/93511210-70692580-f8f0-11ea-91fb-04c5c239233e.png">
+<img width="638" alt="Occupancy Histogram" src="https://user-images.githubusercontent.com/35668165/93511220-75c67000-f8f0-11ea-8afb-6945ae0e8d10.png">
+<img width="638" alt="Temperature Histogram" src="https://user-images.githubusercontent.com/35668165/93511229-7a8b2400-f8f0-11ea-9b94-0b6fc10e79ef.png">
 
-#### 4) What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems? 
+
+#### 5) What is the mean and variance of the time interval of the sensor readings? Please plot its probability distribution function. Does it mimic a well-known distribution for connection intervals in large systems? 
 
 ###### Time Interval of the Sensor Readings
 Mean | Variance
