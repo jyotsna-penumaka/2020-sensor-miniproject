@@ -63,6 +63,23 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
     time_delta.plot.hist(title=f'probability distribution function for time')
     plt.xlabel('Time Interval (seconds)')
     plt.ylabel('Probability')
+    
+    # To make the histograms              
+    plt.suptitle("Lab1 Occupancy Histogram")
+    data["occupancy"].lab1.hist()
+    plt.ylabel("Number of entries")
+    plt.xlabel("Occupancy")
+    plt.figure()
+    plt.suptitle("Lab1 Temperature Histogram")
+    data["temperature"].lab1.hist()
+    plt.ylabel("Number of entries")
+    plt.xlabel("Temperature")
+    plt.figure()
+    plt.suptitle("Lab1 CO2 Histogram")
+    data["co2"].lab1.hist()
+    plt.ylabel("Number of entries")
+    plt.xlabel("CO2")
+                  
     plt.show()
 
 if __name__ == "__main__":
