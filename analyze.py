@@ -1,11 +1,9 @@
 #!/usr/bin/env python3
 """
 This example assumes the JSON data is saved one line per timestamp (message from server).
-
 It shows how to read and process a text file line-by-line in Python, converting JSON fragments
 to per-sensor dictionaries indexed by time.
 These dictionaries are immediately put into Pandas DataFrames for easier processing.
-
 Feel free to save your data in a better format--I was just showing what one might do quickly.
 """
 import pandas
@@ -50,7 +48,7 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
             print(f'median observed from the lab1 {k} data: {"{:.2f}".format(median)}')
             print(f'variance observed from the lab1 {k} data: {"{:.2f}".format(var)}')
         plt.figure()
-        (data[k]["lab1"]).plot.hist(label=k,title=f'probability distribution function for lab1')
+        (data[k]["lab1"]).plot.density(label=k,title=f'probability distribution function for lab1')
         plt.xlabel(k)
         plt.ylabel('Probability')
         plt.legend(loc="upper left")
@@ -60,10 +58,13 @@ def analyse_data(data: T.Dict[str, pandas.DataFrame]):
     time_mean = time_delta.mean()
     print(f'variance of the time interval of the sensor readings {time_var}')
     print(f'mean of the time interval of the sensor readings {time_mean}')
+    time_delta.plot.density(title=f'probability distribution function for time')
+    plt.xlabel('Time Interval (seconds)')
+    plt.ylabel('Probability')
     time_delta.plot.hist(title=f'probability distribution function for time')
     plt.xlabel('Time Interval (seconds)')
     plt.ylabel('Probability')
-    
+    plt.figure()
     # To make the histograms              
     plt.suptitle("Lab1 Occupancy Histogram")
     data["occupancy"].lab1.hist()

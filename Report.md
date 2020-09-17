@@ -55,7 +55,11 @@ Mean | Variance
 -----|----------
 0.968014 | 1.013983
 
+###### Time Interval probability density function
 <img width="632" alt="Screen Shot 2020-09-15 at 10 21 35 PM" src="https://user-images.githubusercontent.com/60219242/93285042-faef3f00-f7a1-11ea-8455-84a45c3f853c.png">
+
+###### Time Interval Histogram
+<img width="596" alt="Screen Shot 2020-09-17 at 3 49 42 PM" src="https://user-images.githubusercontent.com/60219242/93521239-c98b8600-f8fd-11ea-8496-64c93215e0f8.png">
 
 Yes, it mimics the Erlang distribution which is used to predict waiting times in queuing systems. Erlang distrubution is also specific case of a Gamma distrubtion. Since the time intervals for all three rooms are the same, we are using one probability distribution function graph to represent them.
 
