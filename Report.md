@@ -2,6 +2,7 @@
 
 ### Contributors: Jyotsna Penumaka (BU ID: U13844479), Emanuel Perez (BU ID: U74196797)
 
+#### We both contributed equally to the completion of the project. We had multiple zoom meetings over which we brainstormed and worked on the various tasks. We worked on separate repos and wrote our code for every task to make the most of this learning experience.  
 
 ## Task 0
 #### 1) What is the greeting string issued by the server to the client upon first connecting?
